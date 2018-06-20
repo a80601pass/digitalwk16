@@ -18,15 +18,14 @@
 #include "pitches.h"
 long currenttime1,previoustime1,currenttime2,previoustime2;
 boolean check1,check2;
-int buttonState1 = 0;
-int buttonState2 = 0;
+
 
 // notes in the melody:
 int melody1[] = {
   NOTE_B4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4 ,NOTE_B4, NOTE_A4, NOTE_G4, NOTE_A4, NOTE_B4, NOTE_B4, NOTE_B4, NOTE_A4,NOTE_A4,NOTE_B4, NOTE_A4, NOTE_G4
 };
 int melody2[] = {
-  NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4,NOTE_B4
+  NOTE_B4,NOTE_A4,NOTE_B4,NOTE_A4,NOTE_B4,NOTE_A4,NOTE_B4,NOTE_A4,NOTE_B4
 };
 
 // note durations: 4 = quarter note, 8 = eighth note, etc.:
@@ -38,16 +37,14 @@ int noteDurations2[] = {
 };
 
 void setup() {
-   pinMode(4, INPUT);
-   pinMode(7, INPUT);
+
    pinMode(13, OUTPUT);
    noTone(8);
 }
 
 void loop() {
-  buttonState1 = digitalRead(4);
-  buttonState2 = digitalRead(7);
-    if (buttonState1 == HIGH) {
+
+
     for (int thisNote1 = 0; thisNote1 < 27; thisNote1++) {
 
     int noteDuration1 = 1000 / noteDurations1[thisNote1];
@@ -67,8 +64,7 @@ void loop() {
 
     noTone(8);
   }
-  }
-  if(buttonState2==HIGH) {
+  
      for (int thisNote2 = 0; thisNote2 < 11; thisNote2++) {
 
     int noteDuration2 = 1000 / noteDurations2[thisNote2];
@@ -88,5 +84,5 @@ void loop() {
 
     noTone(8);
   }
-  }
+  
 }
